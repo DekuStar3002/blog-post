@@ -1,16 +1,14 @@
 import React from 'react';
-import './post.css';
+import './Post.css';
 import clapIcon from '../../assets/Icons/clapping.svg';
 import redLikeIcon from '../../assets/Icons/heart-red.svg';
 import blackLikeIcon from '../../assets/Icons/heart-black.svg';
-// import imgSrc from '../../assets/Images/abstract.png';
 const Post = ({date, readingTime, title, description, claps, liked, image}) => {
-  const imgSrc = `../../assets/Images/${image}`;
-  console.log(imgSrc)
+  const imgSrc = require(`../../assets/Images/${image}`);
   return (
     <div className='post'>
       <div className='img'>
-        <img src={`../../assets/Images/${image}`} alt='imgSrc'/>
+        <img src={imgSrc} alt='imgSrc'/>
       </div>
       <div className='content'>
         <div className='upper'>
