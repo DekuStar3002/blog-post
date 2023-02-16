@@ -1,0 +1,36 @@
+.header {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2vh 5vw;
+}
+
+.logo :nth-child(1) {
+  font-size: x-large;
+}
+
+.logo :nth-child(2) {
+  font-style: italic;
+}
+
+.navbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.navbar a {
+  text-decoration: none !important;
+  color: whitesmoke;
+  margin: 3vh 5vw;
+}
+
+a {
+  text-decoration: none;
+}

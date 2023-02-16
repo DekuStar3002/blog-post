@@ -1,0 +1,15 @@
+.footer {
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0 5vw;
+}
