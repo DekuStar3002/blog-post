@@ -1,9 +1,7 @@
 import './App.css';
-import Header from './component/Header/header';
-import PostContainer from './component/PostContainer/postContainer';
-import Footer from './component/Footer/footer';
+import { Header, PostContainer, Footer } from './component';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Header />

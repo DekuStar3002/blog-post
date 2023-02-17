@@ -6,7 +6,7 @@
 .logo {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   padding: 2vh 5vw;
 }

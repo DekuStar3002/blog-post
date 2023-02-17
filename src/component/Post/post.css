@@ -1,55 +1,6 @@
 .post {
   height: 60vh;
   width: 20vw;
-  border: 1px solid black;
+  border: 1px solid rgb(218, 216, 216);
   margin: 2vh 2vw;
-}
-
-.img {
-  height: 50%;
-  width: 100%;
-}
-
-.img img {
-  height: 100%;
-  width: 100%;
-}
-
-.content {
-  margin: 1vh 1vw;
-}
-
-.upper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.title {
-  font-size: x-large;
-}
-
-.middle {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  margin: 2vh 0;
-}
-
-.bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 1vh 0;
-}
-
-.clap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reaction {
-  height: 3vh;
-  width: 3vw;
 }
