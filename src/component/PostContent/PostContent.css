@@ -43,3 +43,8 @@
   width: 3vw;
   cursor: pointer;
 }
+
+.reaction:hover {
+  transition-duration: 0.2s;
+  transform: scale(1.2);
+}
