@@ -3,15 +3,27 @@ import { Post } from '../index';
 import jsonData from '../../assets/mockData/index.json';
 import './PostContainer.css';
 const PostContainer = () => {
-  const [ posts, setPosts ] = useState([ ...jsonData ]);
+  const [ posts, setPosts ] = useState([]);
+
   const clickLike = (id) => {
     posts[id].liked = !posts[id].liked;
     setPosts([ ...posts ]);
   }
+
   const clickClap = (id) => {
-    posts[id].claps += 1;
+    if(posts[id].claped) {
+      posts[id].claps -= 1;
+    } else {
+      posts[id].claps += 1;
+    }
+    posts[id].claped = !posts[id].claped;
     setPosts([ ...posts ]);
   }
+
+  useEffect(() => {
+    setPosts([ ...jsonData ]);
+  }, []);
+
   return (
     <div className='posts'>
       {
@@ -23,6 +35,7 @@ const PostContainer = () => {
             title={post.title}
             description={post.description}
             claps={post.claps}
+            claped={post.claped}
             clickClap={clickClap}
             liked={post.liked}
             clickLike={clickLike}

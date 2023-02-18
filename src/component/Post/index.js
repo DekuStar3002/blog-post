@@ -1,11 +1,12 @@
 import React from 'react';
 import './Post.css';
-import clapIcon from '../../assets/Icons/clapping.svg';
+import blackClapIcon from '../../assets/Icons/clapping-black.svg';
+import greyClapIcon from '../../assets/Icons/clapping-grey.svg';
 import redLikeIcon from '../../assets/Icons/heart-red.svg';
 import blackLikeIcon from '../../assets/Icons/heart-black.svg';
 import { PostImage, PostContent } from '../index';
 
-const Post = ({id, date, readingTime, title, description, claps, clickClap, liked, clickLike, image}) => {
+const Post = ({id, date, readingTime, title, description, claps, claped, clickClap, liked, clickLike, image}) => {
   const imgSrc = require(`../../assets/Images/${image}`);
   return (
     <div className='post'>
@@ -18,8 +19,9 @@ const Post = ({id, date, readingTime, title, description, claps, clickClap, like
         readingTime={readingTime}
         title={title}
         description={description}
-        clapIcon={clapIcon}
+        clapIcon={claped ? blackClapIcon : greyClapIcon}
         claps={claps}
+        claped={claped}
         clickClap={clickClap}
         likeIcon={liked ? redLikeIcon : blackLikeIcon}
         clickLike={clickLike}
