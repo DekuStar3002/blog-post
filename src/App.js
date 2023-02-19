@@ -1,12 +1,10 @@
 import './App.css';
-import { Header, PostContainer, Footer } from './component';
+import { BlogPage } from './pages';
 
 const App = () => {
   return (
     <div className="App">
-      <Header />
-      <PostContainer />
-      <Footer />
+      <BlogPage />
     </div>
   );
 }
