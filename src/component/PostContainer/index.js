@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Post } from '../../component/index';
+import { Post } from '../index';
 import jsonData from '../../assets/mockData/index.json';
 import './PostContainer.css';
 const PostContainer = () => {

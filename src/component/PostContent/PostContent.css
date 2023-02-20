@@ -42,9 +42,9 @@
   height: 3vh;
   width: 3vw;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .reaction:hover {
-  transition-duration: 0.2s;
   transform: scale(1.2);
 }

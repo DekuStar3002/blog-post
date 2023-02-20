@@ -1,6 +1,5 @@
 import React from 'react'
-import { Header, Footer } from '../../component';
-import { PostContainer } from '../index';
+import { Header, Footer, PostContainer } from '../../component';
 const BlogPage = () => {
   return (
     <div>
