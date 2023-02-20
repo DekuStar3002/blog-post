@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="header"
+  >
+    <div
+      class="logo"
+    >
+      <p>
+        The Artifact
+      </p>
+      <p>
+        Culture & Art blog
+      </p>
+    </div>
+    <div
+      class="navbar"
+    >
+      <a
+        href="#blog"
+      >
+        Blog
+      </a>
+      <a
+        href="#about"
+      >
+        About
+      </a>
+      <a
+        href="#contact"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</DocumentFragment>
+`;
