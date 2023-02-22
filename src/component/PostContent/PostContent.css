@@ -1,16 +1,21 @@
 .content {
   margin: 1vh 1vw;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .upper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .upper p {
   font-size: smaller;
   color: grey;
+  margin: 0 20px;
 }
 
 .title {
@@ -20,9 +25,24 @@
 .middle {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   margin: 2vh 0;
   text-align: left;
   text-size-adjust: auto;
+}
+
+.about {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block; 
+  width: 250px;
+  /* padding: 0 10px; */
+}
+
+hr {
+  width: 100%;
+  border: 1px solid rgb(159, 157, 157);
 }
 
 .bottom {
@@ -35,7 +55,12 @@
 .clap {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-right: 50px;
+}
+
+.heart {
+  margin-left: 50px;
 }
 
 .reaction {

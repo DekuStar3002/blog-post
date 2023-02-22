@@ -1,29 +1,41 @@
-import React from 'react';
-import './Post.css';
-import blackClapIcon from '../../assets/Icons/clapping-black.svg';
-import greyClapIcon from '../../assets/Icons/clapping-grey.svg';
-import redLikeIcon from '../../assets/Icons/heart-red.svg';
-import blackLikeIcon from '../../assets/Icons/heart-black.svg';
-import { PostImage, PostContent } from '..';
+import React, { useState, useEffect } from "react";
+import "./Post.css";
+import { API_ENDPOINT } from "../../constants";
+import MakeRequest from "../../utils/makeRequest";
+import blackClapIcon from "../../assets/Icons/clapping-black.svg";
+import greyClapIcon from "../../assets/Icons/clapping-grey.svg";
+import redLikeIcon from "../../assets/Icons/heart-red.svg";
+import blackLikeIcon from "../../assets/Icons/heart-black.svg";
+import { PostImage, PostContent } from "..";
 
-const Post = ({id, date, readingTime, title, description, claps, claped, clickClap, liked, clickLike, image}) => {
-  const imgSrc = require(`../../assets/Images/${image}`);
+function Post({
+  index,
+  id,
+  date,
+  readingTime,
+  title,
+  description,
+  claps,
+  liked,
+  image,
+  handleClap,
+  handleLike,
+}) {
   return (
-    <div className='post'>
-      <PostImage
-        imgSrc={imgSrc} 
-      />
-      <PostContent 
+    <div className="post">
+      <PostImage imgSrc={image} />
+      <PostContent
+        index={index}
         id={id}
         date={date}
         readingTime={readingTime}
         title={title}
         description={description}
-        clapIcon={claped ? blackClapIcon : greyClapIcon}
+        clapIcon={blackClapIcon}
         claps={claps}
-        clickClap={clickClap}
         likeIcon={liked ? redLikeIcon : blackLikeIcon}
-        clickLike={clickLike}
+        handleClap={handleClap}
+        handleLike={handleLike}
       />
     </div>
   );

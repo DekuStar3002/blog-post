@@ -1,7 +1,7 @@
-import './App.css';
-import { BlogPage } from './pages';
+import "./App.css";
+import { BlogPage } from "./pages";
 
-const App = () => {
+function App() {
   return (
     <div className="App">
       <BlogPage />
