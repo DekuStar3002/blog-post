@@ -7,9 +7,9 @@ const MakeRequest = async (configObj, navigate) => {
   } catch (error) {
     const errorCode = error.response?.status;
     if(errorCode) {
-      navigate(`error/${errorCode}`);
+      navigate(`/error/${errorCode}`);
     } else {
-      navigate('error');
+      navigate('/error');
     }
   }
 }
