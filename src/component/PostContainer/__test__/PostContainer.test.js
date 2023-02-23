@@ -39,24 +39,24 @@ describe('PostContainer', () => {
     render(<PostContainer />);
     // console.log(screen.getByTestId('loader'));
     expect(screen.getByTestId('loader')).toBeTruthy();
-    waitFor(() => {
-      expect(screen.getAllByTestId('posts').length).toEqual(2);
+    await waitFor(() => {
+      expect(screen.queryAllByTestId('posts')).toHaveLength(2);
     })
   });
 
   it('should show data when call is made to backend and data is fetched', async () => {
     MakeRequest.mockResolvedValue(mockData);
     render(<PostContainer />);
-    waitFor(() => {
-      expect(screen.getAllByTestId('posts').length).toEqual(2);
+    await waitFor(() => {
+      expect(screen.queryAllByTestId('posts').length).toEqual(2);
     })
   });
 
   it('should show error message when call is made to backend and error occure', async () => {
     MakeRequest.mockRejectedValue(new Error('Something went wrong!'));
     render(<PostContainer />);
-    waitFor(() => {
-      expect(screen.getAllByTestId('Something went wrong!')).toBeTruthy() 
+    await waitFor(() => {
+      expect(screen.queryByTestId('error')).toBeTruthy() 
     })
   });
 

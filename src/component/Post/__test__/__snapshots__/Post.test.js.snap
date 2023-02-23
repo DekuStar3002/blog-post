@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="post"
+    data-testid="posts"
+  >
+    <div
+      class="img"
+    >
+      <img
+        alt="imgSrc"
+        src="abstract.png"
+      />
+    </div>
+    <div
+      class="content"
+    >
+      <div
+        class="upper"
+      >
+        <p>
+          NaNth
+      undefined, 
+      NaN
+        </p>
+        <p>
+          readingTime
+        </p>
+      </div>
+      <div
+        class="middle"
+      >
+        <p
+          class="title"
+        >
+          title
+        </p>
+        <p
+          class="about"
+        >
+          description
+        </p>
+      </div>
+      <hr
+        class="horizontalLine"
+      />
+      <div
+        class="bottom"
+      >
+        <div
+          class="clap"
+        >
+          <img
+            alt="clapping"
+            class="reaction"
+            data-testid="clap-src"
+            src="clapping-black.svg"
+          />
+          <p
+            data-testid="claps"
+          >
+            5
+          </p>
+        </div>
+        <img
+          alt="like"
+          class="reaction heart"
+          data-testid="heart"
+          src="heart-black.svg"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

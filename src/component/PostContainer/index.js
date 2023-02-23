@@ -47,7 +47,7 @@ function PostContainer() {
         setLoading(false);
       })
       .catch((error) => {
-        setErrorStatus({ errorStatus: true, messaga: error.messaga });
+        setErrorStatus({ isError: true, messaga: error.messaga });
         setLoading(false);
       });
   }, []);
@@ -67,11 +67,10 @@ function PostContainer() {
           />
         </div>
       ) : errorStatus.isError ? (
-        <div>{errorStatus.message}</div>
+        <div data-testid='error'>{errorStatus.message}</div>
       ) : (
         posts.map((post, index) => (
           <Post
-            data-testid='posts'
             key={index}
             index={index}
             id={post.id}

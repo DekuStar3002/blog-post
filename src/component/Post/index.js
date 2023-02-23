@@ -22,7 +22,7 @@ function Post({
   handleLike,
 }) {
   return (
-    <div className="post">
+    <div className="post" data-testid='posts'>
       <PostImage imgSrc={image} />
       <PostContent
         index={index}
