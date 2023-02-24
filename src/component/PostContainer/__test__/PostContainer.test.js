@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen, waitFor } from '@testing-library/react';
 import PostContainer from "..";
 import MakeRequest from "../../../utils/makeRequest";
+import { BlogPostContext } from "../../../contexts/BlogPostContext";
 
 jest.mock('../../../utils/makeRequest');
 
@@ -34,19 +35,29 @@ describe('PostContainer', () => {
     }
   ];
 
+  const mockSetPosts = jest.fn();
+
   it('should show loading when api call is made to backend', async () => {
     MakeRequest.mockResolvedValue(mockData);
-    render(<PostContainer />);
-    // console.log(screen.getByTestId('loader'));
-    expect(screen.getByTestId('loader')).toBeTruthy();
+  
+    render(
+      <BlogPostContext.Provider value={{ posts: [], setPosts: mockSetPosts}}>
+        <PostContainer />
+      </BlogPostContext.Provider>
+    );
+    
     await waitFor(() => {
-      expect(screen.queryAllByTestId('posts')).toHaveLength(2);
+      expect(screen.getByTestId('loader')).toBeTruthy();
     })
   });
 
   it('should show data when call is made to backend and data is fetched', async () => {
     MakeRequest.mockResolvedValue(mockData);
-    render(<PostContainer />);
+    render(
+      <BlogPostContext.Provider value={{ posts: [ ...mockData ], setPosts: mockSetPosts}}>
+        <PostContainer />
+      </BlogPostContext.Provider>
+    );
     await waitFor(() => {
       expect(screen.queryAllByTestId('posts').length).toEqual(2);
     })
@@ -54,7 +65,11 @@ describe('PostContainer', () => {
 
   it('should show error message when call is made to backend and error occure', async () => {
     MakeRequest.mockRejectedValue(new Error('Something went wrong!'));
-    render(<PostContainer />);
+    render(
+      <BlogPostContext.Provider value={{ posts: [], setPosts: mockSetPosts}}>
+        <PostContainer />
+      </BlogPostContext.Provider>
+    );
     await waitFor(() => {
       expect(screen.queryByTestId('error')).toBeTruthy() 
     })
