@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { ColorRing } from "react-loader-spinner";
 import { Post } from "..";
 import { API_ENDPOINT } from "../../constants";
 import MakeRequest from "../../utils/makeRequest";
+import { BlogPostContext } from "../../contexts/BlogPostContext";
 import "./PostContainer.css";
 
 function PostContainer() {
-  const [posts, setPosts] = useState([]);
+  const {posts, setPosts} = useContext(BlogPostContext);
   const [loading, setLoading] = useState(false);
   const [errorStatus, setErrorStatus] = useState({
     isError: false,
@@ -33,8 +34,11 @@ function PostContainer() {
         liked: !posts[index].liked,
       })
     );
-    const newPostData = posts;
-    newPostData[index].liked = !posts[index].liked;
+    const newPostData = [ ...posts ];
+    newPostData[index] = {
+      ...newPostData[index],
+      liked: !posts[index].liked
+    };
     setPosts(newPostData);
   };
 
@@ -47,7 +51,7 @@ function PostContainer() {
         setLoading(false);
       })
       .catch((error) => {
-        setErrorStatus({ isError: true, messaga: error.messaga });
+        setErrorStatus({ isError: true, messaga: error.message });
         setLoading(false);
       });
   }, []);

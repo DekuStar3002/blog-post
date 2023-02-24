@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Post.css";
-import { API_ENDPOINT } from "../../constants";
-import MakeRequest from "../../utils/makeRequest";
 import blackClapIcon from "../../assets/Icons/clapping-black.svg";
-import greyClapIcon from "../../assets/Icons/clapping-grey.svg";
 import redLikeIcon from "../../assets/Icons/heart-red.svg";
 import blackLikeIcon from "../../assets/Icons/heart-black.svg";
 import { PostImage, PostContent } from "..";
